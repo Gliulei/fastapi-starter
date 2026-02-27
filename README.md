@@ -1,212 +1,218 @@
 # FastAPI Starter
 
-##简介
+<div align="center">
 
-一个现代化、开箱即用的 FastAPI 项目骨架，旨在帮你快速搭建高性能的 Python Web 服务或 API接口。告别繁琐的初始化配置，专注于业务逻辑的开发。
+**English** | [中文](./README.zh-CN.md)
 
-##特性
+</div>
 
--🚀基于 FastAPI构建，支持异步和高性能
-- 📦标化的项目结构，易于维护和扩展
--🔧完整的配置管理系统
--🛡️内置 CORS支持和安全配置
--📝 自动生成 API 文档 (Swagger UI & ReDoc)
--🧪完整的测试套件和覆盖率报告
--🐳 Docker容器化支持
-- 📊 请求日志记录和性能监控
--⚡ uv进高速依赖管理
+## Description
 
-##技术栈
+A modern, out-of-the-box FastAPI project skeleton designed to help you quickly build high-performance Python web services or API interfaces. Say goodbye to tedious initial configuration and focus on business logic development.
 
-- **FastAPI** - 现代、快速的 Python Web框架
-- **Pydantic** - 数据验证和设置管理
-- **Uvicorn** - ASGI 服务器
-- **uv** -极的Python包管理器
-- **pytest** -测试框架
-- **Docker** -容器化部署
+## Features
 
-## 项目结构
+- 🚀 Built on FastAPI with async support and high performance
+- 📦 Standardized project structure for easy maintenance and extension
+- 🔧 Complete configuration management system
+- 🛡️ Built-in CORS support and security configuration
+- 📝 Auto-generated API documentation (Swagger UI & ReDoc)
+- 🧪 Complete test suite with coverage reports
+- 🐳 Docker containerization support
+- 📊 Request logging and performance monitoring
+- ⚡ Ultra-fast dependency management with uv
+
+## Tech Stack
+
+- **FastAPI** - Modern, fast Python web framework
+- **Pydantic** - Data validation and settings management
+- **Uvicorn** - ASGI server
+- **uv** - Ultra-fast Python package manager
+- **pytest** - Testing framework
+- **Docker** - Containerization deployment
+
+## Project Structure
 
 ```
 fastapi-starter/
-├── app/                    #应用核心代码
+├── app/                    # Core application code
 │   ├── __init__.py
-│   ├── main.py            # FastAPI应用入口
-│   ├── config/            #配置管理
+│   ├── main.py            # FastAPI application entry point
+│   ├── config/            # Configuration management
 │   │   └── settings.py
-│   ├── api/               # API路由
+│   ├── api/               # API routes
 │   │   └── routes/
 │   │       └── general.py
-│   ├── models/            # 数据模型
-│   │  └── schemas.py
-│   └── middleware/        # 中间件
+│   ├── models/            # Data models
+│   │   └── schemas.py
+│   └── middleware/        # Middleware
 │       └── logging.py
-├── tests/                 #测试代码
+├── tests/                 # Test code
 │   └── test_main.py
-├── docs/                  # 文档
+├── docs/                  # Documentation
 ├── Dockerfile
 └── docker-compose.yml
 ```
 
-##快速开始
+## Quick Start
 
-### 1.安装依赖
+### 1. Install Dependencies
 
 ```bash
-# 使用 uv安项目项目依赖（推荐）
+# Install project dependencies using uv (recommended)
 uv pip install -e .
 
-#安装开发依赖（包括测试工具）
+# Install development dependencies (including testing tools)
 uv pip install -e ".[test]"
 
-# 或者使用传统的 pip（不推荐）
+# Or use traditional pip (not recommended)
 pip install -e .
 pip install -e ".[test]"
 ```
 
-### 2.运行应用
+### 2. Run the Application
 
 ```bash
-# 开发模式（带热重载）
+# Development mode with hot reload
 uvicorn app.main:app --reload
 
-# 或者直接运行
+# Or run directly
 python -m app.main
 ```
 
-### 3.访问应用
+### 3. Access the Application
 
--应用主页: http://localhost:8000
-- API文档 (Swagger UI): http://localhost:8000/docs
-- API文档 (ReDoc): http://localhost:8000/redoc
--健康检查: http://localhost:8000/health
+- Application homepage: http://localhost:8000
+- API documentation (Swagger UI): http://localhost:8000/docs
+- API documentation (ReDoc): http://localhost:8000/redoc
+- Health check: http://localhost:8000/health
 
-## API 端点
+## API Endpoints
 
-### 通用端点
+### General Endpoints
 
-- `GET /` - 应用根路径，返回欢迎信息
-- `GET /health` -健康检查端点
-- `GET /api/v1/health` - API健康检查
-- `GET /api/v1/info` -应用信息
+- `GET /` - Application root path, returns welcome message
+- `GET /health` - Health check endpoint
+- `GET /api/v1/health` - API health check
+- `GET /api/v1/info` - Application information
 
-##测试
+## Testing
 
 ```bash
-#运行所有测试
+# Run all tests
 pytest
 
-# 运行测试并生成覆盖率报告
+# Run tests and generate coverage report
 pytest --cov=app
 
-# 详细的测试输出
+# Verbose test output
 pytest -v
 
-# 运行特定测试文件
+# Run specific test file
 pytest tests/test_main.py
 ```
 
-## 配置
+## Configuration
 
-应用配置位于 `app/config/settings.py`，支持通过环境变量覆盖：
+Application configuration is located in `app/config/settings.py`, supports environment variable overrides:
 
 ```bash
-# 设置环境变量
+# Set environment variables
 export APP_NAME="My App"
 export DEBUG=false
 export PORT=8080
 ```
 
-## Docker部署
+## Docker Deployment
 
 ```bash
-#构建镜像
+# Build image
 docker build -t fastapi-starter .
 
-#运行容器
+# Run container
 docker run -p 8000:8000 fastapi-starter
 
-# 使用 docker-compose
+# Use docker-compose
 docker-compose up -d
 ```
 
-## 开发指南
+## Development Guide
 
-### 使用 uv管开发理开发环境
+### Using uv for Development Environment Management
 
 ```bash
-# 创建虚拟环境
+# Create virtual environment
 uv venv
 
-#虚拟环境
+# Activate virtual environment
 source .venv/bin/activate  # Linux/Mac
 .venv\Scripts\activate     # Windows
 
-#安装依赖
+# Install dependencies
 uv pip install -e ".[test]"
 
-#运行测试
+# Run tests
 pytest
 
-#运行应用
+# Run application
 uvicorn app.main:app --reload
 ```
 
-### 添加新的API路由
+### Adding New API Routes
 
-1. 在 `app/api/routes/` 目录下创建新的路由文件
-2.定义路由和端点处理函数
-3. 在 `app/main.py` 中注册路由
+1. Create a new route file in the `app/api/routes/` directory
+2. Define routes and endpoint handler functions
+3. Register routes in `app/main.py`
 
-### 添加数据模型
+### Adding Data Models
 
-1. 在 `app/models/schemas.py` 中定义 Pydantic模型
-2. 在路由中使用模型进行数据验证
+1. Define Pydantic models in `app/models/schemas.py`
+2. Use models for data validation in routes
 
-### 添加中间件
+### Adding Middleware
 
-1. 在 `app/middleware/`目录下创建中间件文件
-2. 在 `app/main.py` 中注册中间件
+1. Create middleware file in `app/middleware/` directory
+2. Register middleware in `app/main.py`
 
-## uv 最佳实践
+## uv Best Practices
 
-### 依赖管理
+### Dependency Management
 
-- 使用 `uv pip install`而非 `pip install`获更快的安装速度
-- 使用 `uv.lock` 文件锁定依赖版本确保可重现的构建
--定使用 `uv pip list --outdated`检查依赖更新
+- Use `uv pip install` instead of `pip install` for faster installation
+- Use `uv.lock` file to lock dependency versions for reproducible builds
+- Regularly use `uv pip list --outdated` to check for dependency updates
 
-###性能优化
+### Performance Optimization
 
-- uv 的依赖解析速度比 pip快 10-100-
-- 使用 `uv pip install --no-cache`跳缓存获得最新版本
-- 在 CI/CD 环境中使用 `uv pip install --system`虚拟环境
+- uv's dependency resolution is 10-100x faster than pip
+- Use `uv pip install --no-cache` to skip cache for latest versions
+- Use `uv pip install --system` in CI/CD environments without virtual environments
 
-###故排除
+### Troubleshooting
 
-常见问题及解决方案：
+Common issues and solutions:
 
-1. **依赖解析冲突**：使用 `uv pip install --resolution=lowest-direct` 
-2. **缓存问题**：使用 `uv pip cache clean`清理缓存
-3. **权限问题**：确保有足够的写入权限或使用 `--user`标志
+1. **Dependency resolution conflicts**: Use `uv pip install --resolution=lowest-direct`
+2. **Cache issues**: Use `uv pip cache clean` to clear cache
+3. **Permission issues**: Ensure write permissions or use `--user` flag
 
-##联系
+## Contact
 
-如需联系作者，请通过以下方式：
+If you need to contact the author, please use the following method:
 
-- 姓名: shenyi
-- 邮箱: 1245332635@qq.com
+- Name: shenyi
+- Email: 1245332635@qq.com
 
-## 贡
+## Contribution
 
-欢迎提交 Issue 和 Pull Request！
+Welcome to submit Issues and Pull Requests!
 
-1. Fork 本仓库
-2. 创建功能分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4.推送到分支 (`git push origin feature/AmazingFeature`)
-5. 开启 Pull Request
+1. Fork this repository
+2. Create feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Open Pull Request
 
-##许可证
+## License
 
-本项目采用 MIT许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
