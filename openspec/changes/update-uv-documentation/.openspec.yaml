@@ -1,0 +1,7 @@
+name: update-uv-documentation
+title: 更新项目文档以支持uv管理
+description: 更新项目文档以反映使用uv作为Python包管理工具的情况
+status: complete
+created: 2026-02-27
+author: Qoder
+completed: 2026-02-27
