@@ -190,7 +190,14 @@ uvicorn app.main:app --reload
 2. **缓存问题**：使用 `uv pip cache clean`清理缓存
 3. **权限问题**：确保有足够的写入权限或使用 `--user`标志
 
-##贡
+##联系
+
+如需联系作者，请通过以下方式：
+
+- 姓名: shenyi
+- 邮箱: 1245332635@qq.com
+
+## 贡
 
 欢迎提交 Issue 和 Pull Request！
 

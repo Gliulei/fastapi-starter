@@ -190,6 +190,13 @@ Common issues and solutions:
 2. **Cache issues**: Use `uv pip cache clean` to clear cache
 3. **Permission issues**: Ensure write permissions or use `--user` flag
 
+## Contact
+
+If you need to contact the author, please use the following method:
+
+- Name: shenyi
+- Email: 1245332635@qq.com
+
 ## Contribution
 
 Welcome to submit Issues and Pull Requests!
